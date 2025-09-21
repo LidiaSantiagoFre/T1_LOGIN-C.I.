@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box login">
+      <form action="">
+        <h2>Login</h2>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class='bx bxs-user'></i> 
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class='bx bxs-lock'></i> 
+        </div>
+        <div class="forgot-link">
+          <a href="#" id="open-recover">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">
+          <span>Login</span>
+          <i class='bx bxs-send'></i> 
+        </button>
+        <p>Login with social platforms</p>
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-google'></i></a>
+          <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+      </form>
+    </div>
+    <div class="form-box register">
+      <form action="">
+        <h2>Registration</h2>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class='bx bxs-user'></i> 
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Email" required>
+          <i class='bx bxs-envelope'></i> 
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class='bx bxs-lock'></i> 
+        </div>
+        <button type="submit" class="btn">
+          <span>Register</span>
+          <i class='bx bxs-send'></i> 
+        </button>
+        <p>Or register with social platforms</p>
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-google'></i></a>
+          <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+      </form>
+    </div>
+    <div class="form-box recover">
+      <form id="recover-form">
+        <h2>Recover Password</h2>
+        <p class="info-text">Enter your email to receive reset instructions</p>
+        <div class="input-box">
+          <input type="email" placeholder="Email" required>
+          <i class='bx bxs-envelope'></i>
+        </div>
+        <button type="submit" class="btn">
+          <span>Send Email</span>
+          <i class='bx bxs-send'></i>
+        </button>
+        <div class="back-link">
+          <a href="#" id="back-to-login">Back to login</a>
+        </div>
+      </form>
+    </div>
+    <div class="form-box change-pass">
+      <form id="change-form">
+        <h2>Change Password</h2>
+        <p class="info-text">Enter your new password</p>
+        <div class="input-box">
+          <input type="password" id="new-password" placeholder="New password" required>
+          <i class='bx bxs-lock'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="confirm-password" placeholder="Confirm password" required>
+          <i class='bx bxs-lock'></i>
+        </div>
+        <button type="submit" class="btn">
+          <span>Update Password</span>
+          <i class='bx bxs-send'></i>
+        </button>
+        <div class="back-link">
+          <a href="#" id="back-to-login-2">Back to login</a>
+        </div>
+      </form>
+    </div>
+    <div class="toggle-box">
+      <div class="toggle-panel toggle-left">
+        <h2>Hello Welcome!</h2>
+        <p>Don't have an account?</p>
+        <button type="button" class="btn register-btn change-form">Register</button>
+      </div>
+      <div class="toggle-panel toggle-right">
+        <h2>Welcome Back!</h2>
+        <p>Already have an account?</p>
+        <button type="button" class="btn login-btn change-form">Login</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
