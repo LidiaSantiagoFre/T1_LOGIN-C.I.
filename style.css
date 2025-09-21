@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+
+:root {
+ --white-color: #fff;
+ --text-color: #79787a;
+ --primary-color:#0056b3;
+ --primary-text-color: #888;
+ --hover-color: #eee;
+ --bgl-color:#5dc0ac;
+ --bg2-color: #aab659;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bgl-color), var(--bg2-color));
+}
+
+.container {
+    position: relative;
+    width: 850px;
+    height: 600px;
+    margin: 30px;
+    background: var(--white-color);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-box {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.form-box.login {
+    left: 0;
+}
+
+.form-box.register {
+    right: 0;
+}
+
+form {
+    width: 100%;
+}
+
+.form-box h2 {
+    font-size: 36px;
+    text-decoration: underline;
+}
+
+.input-box {
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    border-radius: 8px;
+    background: var(--hover-color);
+    border: 2px solid transparent;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.input-box input::placeholder {
+    color: var(--primary-text-color);
+    font-weight: 400;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease;
+}
+
+.input-box input:hover,
+.input-box input:focus {
+    border: 2px solid var(--text-color);
+    
+}
+
+.input-box input:hover + i,
+.input-box input:focus + i {
+    transform: translateY(-50%) scale(1.20);
+}
+
+.forgot-link a {
+    font-size: 14.5px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.forgot-link a:hover {
+    color: var(--bg2-color);
+}
+
+.btn {
+    width: 100%;
+    height: 46px;
+    margin: 20px 0;
+    background: var(--bg2-color);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn span {
+    display: block;
+}
+
+.btn i {
+    transform: translateX(-40px);
+    opacity: 0;
+    font-size: 0;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    font-size: 20px;
+    transform: scale(0.95);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover i {
+    font-size: 25px;
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.toggle-box {
+    position: absolute;
+    height: 100%;
+    width: 203%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg2-color), var(--bgl-color));
+    border-radius: 300px;
+    left: 150%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    flex-direction: column;
+    z-index: 2;
+    transition: all .6s ease-in-out;
+}
+
+.toggle-panel.toggle-left {
+    left: 0;
+}
+
+.toggle-panel.toggle-right {
+    right: 0;
+}
+
+.toggle-panel p {
+    margin: 20px;
+}
+
+.toggle-panel .btn {
+    width: 160px;
+    background: transparent;
+    border: 2px solid var(--white-color);
+    box-shadow: none;
+}
+
+.form-box.login {
+    opacity: 1;
+    left: 0;
+}
+
+.form-box.register {
+    opacity: 0;
+    right: -50%;
+}
+
+.toggle-panel {
+    transition: all 0.6s;
+    transition-delay: 1.4s;
+}
+
+.toggle-panel.toggle-left {
+    opacity: 1;
+}
+
+.toggle-panel.toggle-right {
+    opacity: 0;
+}
+
+.container.active .form-box.register {
+    opacity: 1;
+    right: 0;
+}
+.container.active .form-box.login {
+    opacity: 0;
+    left: -50%;
+}
+
+.form-box {
+    transition: all .6s;
+    transition-delay: 1.6s;
+}
+
+.container.active .toggle-panel.toggle-left {
+    opacity: 0;
+}
+
+.container.active .toggle-panel.toggle-right {
+    opacity: 1;
+}
+
+.container.active .toggle-box {
+    left: -50%;
+}
+
+.toggle-box {
+    transition: all 1.2s;
+    transition-delay: .6s;
+}
+
+.login h2 {
+    color: var(--bg2-color);
+}
+
+.register h2 {
+    color: var(--bgl-color);
+}
+
+.login .input-box input:hover,
+.login .input-box input:focus {
+    border: 2px solid var(--bg2-color);
+} 
+
+.login .input-box input:hover + i,
+.login .input-box input:focus + i {
+    color: var(--bg2-color);
+}
+
+.register .input-box input:hover,
+.register .input-box input:focus {
+    border: 2px solid var(--bgl-color);
+} 
+
+.register .input-box input:hover + i,
+.register .input-box input:focus + i {
+    color: var(--bgl-color);
+}
+
+.form-box.register .btn {
+    background: var(--bgl-color);
+}
+
+.form-box.login .social-icons a:hover {
+    color: var(--bg2-color);
+    box-shadow: 0 5px 10px var(--bg2-color);
+}
+
+.form-box.register .social-icons a:hover {
+    color: var(--bgl-color);
+    box-shadow: 0 5px 10px var(--bgl-color);
+}
+
+.form-box.recover,
+.form-box.change-pass {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+  right: -50%;
+}
+
+.container.recover-active .form-box.recover {
+  opacity: 1;
+  right: 0;
+  pointer-events: auto;
+}
+
+.container.change-pass-active .form-box.change-pass {
+  opacity: 1;
+  right: 0;
+  pointer-events: auto;
+}
+
+.container.recover-active .form-box.login,
+.container.recover-active .form-box.register,
+.container.recover-active .toggle-box,
+.container.change-pass-active .form-box.login,
+.container.change-pass-active .form-box.register,
+.container.change-pass-active .toggle-box {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.info-text {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.back-link {
+  margin-top: 15px;
+}
+
+.back-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.back-link a:hover {
+  color: var(--bg2-color);
+}
+
+.recover h2 {
+    color: var(--bg2-color);
+}
+
+.change-pass h2 {
+    color: var(--bg2-color);
+}
